@@ -1,0 +1,89 @@
+ <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview </a></li>
+            <li><a href="#/NESEval">New Evaluation Sessions</a>
+              <li><a ng-href='#/home/allevalsession'>All Evaluation Sessions(History)<span class="sr-only">(current)</span></a></li>
+
+            </li>
+            <li><a href="#/home/addcategory">Add Category</a></li>
+            <li><a href="#/home/addfeature">Add Features</a></li>
+            <li><a href="#/home/addproduct">Add Products</a></li>
+            <li><a href="#/home/userapproval">User Approval<span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Reports</a></li>
+          </ul>
+       
+        
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+         <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-1">
+                <div class="login-panel panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Add Feature</h3>
+                    </div>
+                    <div class="panel-body">
+                       <form name="myform" method="post" ng-submit="addfeature()" novalidate>
+                            <fieldset>
+                                <div class="form-group">
+                                   <p>Product Type:</p>
+                                  <select ng-model="myVar" ng-change="getprod_cat(myVar)">
+                         <option value="">---Please select---</option>
+                        <option value="API">API</option>
+                        <option value="ESB">ESB</option>
+                        <option value="Integration">Integration</option>
+                        <option value="DevOps">DevOps</option>
+                  </select>
+                                </div>
+                                 <div class="form-group">
+                                 <p>Product:</p>
+                                   <select ng-model="product">
+                         <option value="">---Please select---</option>
+                        <option ng-repeat="product in products" value={{product.productId}}>{{product.productName}}</option>
+                      </select>
+                                </div>
+                                <div class="form-group">
+                                <p>Category:</p>
+                                   <select ng-model="category">
+                         <option value="">---Please select---</option>
+                        <option ng-repeat="category in categorys" value={{category.categoryId}}>{{category.categoryName}}</option>
+                      </select>
+                                </div>
+                                
+                                 <div class="form-group">
+                                    <input class="form-control" placeholder="Feature" ng-model="feature"  name="feature" id="feature" type="text" >
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Rating" ng-model="rating"  name="rating" id="rating" type="number" >
+                                </div>
+                                <div class="form-group">
+                                    <Textarea class="form-control" placeholder="Comments" ng-model="comments"  name="comments" id="comments" type="text" ></Textarea>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Reference" ng-model="reference"  name="reference" id="reference" type="text" >
+                                </div>
+                                 <div class="form-group">
+                                    <input class="form-control" placeholder="Relevance" ng-model="relevance"  name="relevance" id="relevance" type="text" >
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <button type="submit" class="btn btn-lg btn-primary btn-block" ng-disabled="myform.$invalid">Add</button> 
+                           </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+          </div>
+        </div>
+      </div>
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+  

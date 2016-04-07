@@ -1,0 +1,43 @@
+<div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview </a></li>
+            <li><a href="#/NESEval">New Evaluation Sessions</a>
+              <li><a ng-href='#/home/allevalsession'>All Evaluation Sessions(History)<span class="sr-only">(current)</span></a></li>
+
+            </li>
+            <li><a href="#/home/addcategory">Add Category</a></li>
+            <li><a href="#/home/addfeature">Add Features</a></li>
+            <li><a href="#/home/addproduct">Add Products</a></li>
+            <li><a href="#/home/userapproval">User Approval<span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Reports</a></li>
+          </ul>
+       
+        
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h2 class="sub-header">User Evaluations Sessions</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th> No.</th>
+                  <th>Feature</th>
+                  <th ng-repeat="value in featuredetails | unique:'product'">{{value.product}}</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="fetvalue in featuredetails | unique:'feature'">
+                  <td>{{$index+1}}</td>
+                  <td>{{fetvalue.feature}}</td>
+                  <td ng-repeat="scoreval in filtered = (featuredetails | filter: fetvalue.feature) | unique : filtered.product ">{{scoreval.score}}</td>
+                  <td></td>
+                 <!--   <td><a ng-click="detailcat(value)" class="btn btn-success btn-sm" role="button">Details</a></td> -->
+                </tr>
+              </tbody>
+            </table>
+           
+          </div>
+        </div>
+      </div>
