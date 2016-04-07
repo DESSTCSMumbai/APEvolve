@@ -1,0 +1,55 @@
+<div class="row">
+       <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview </a></li>
+            <li><a href="#/NESEval">New Evaluation Sessions</a>
+              <li><a ng-href='#/home/allevalsession'>All Evaluation Sessions(History)<span class="sr-only">(current)</span></a></li>
+
+            </li>
+            <li><a href="#/home/addcategory">Add Category</a></li>
+            <li><a href="#/home/addfeature">Add Features</a></li>
+            <li><a href="#/home/addproduct">Add Products</a></li>
+            <li><a href="#/home/userapproval">User Approval<span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Reports</a></li>
+          </ul>
+       
+        
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+       
+         
+
+
+          <h2 class="sub-header">New User Approval</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>
+                  <th>Signup Date</th>
+                  <th>Phone No</th>
+                  <th>Designation</th>
+                  <th>Company</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="user in registeredUser">
+                  <td>{{$index+1}}</td>
+                  <td>{{user.firstName}}</td>
+                  <td>{{user.lasttName}}</td>
+                  <td>{{user.email}}</td>
+                  <td>{{user.signupDate}}</td>
+                  <td>{{user.phone}}</td>
+                  <td>{{user.designation}}</td>
+                  <td>{{user.company}}</td>
+                  <td><input type="button" ng-click="accept(user)" value="Accept" />
+                 </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>

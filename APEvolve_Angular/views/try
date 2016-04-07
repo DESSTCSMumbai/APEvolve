@@ -1,0 +1,28 @@
+ <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Add Product</h3>
+                    </div>
+                    <div class="panel-body">
+                       <form name="myform" method="post" ng-submit="addcategory()" novalidate>
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Category Name" ng-model="categoryname"  name="categoryname" id="categoryname" type="text" required="required">
+                                </div>
+                                
+                                 <div class="form-group">
+                                    <input class="form-control" placeholder="Product Type" ng-model="producttype"  name="producttype" id="producttype" type="text" >
+                                </div>
+                                
+                             
+                                <!-- Change this to a button or input when using this as a form -->
+                                <button type="submit" class="btn btn-lg btn-primary btn-block" ng-disabled="myform.$invalid">Add</button> 
+                           </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
